@@ -1,6 +1,6 @@
 # Next Chromatacia
 
-Gut rebuild of chromatacia repo using NextJS.
+Gut rebuild of [chromatacia](https://github.com/elizabethhart/chromatacia) using NextJS.
 
 ## Tools
 
