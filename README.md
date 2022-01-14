@@ -9,7 +9,7 @@ Gut rebuild of [chromatacia](https://github.com/elizabethhart/chromatacia) using
 ## Frameworks
 
 - [TailwindCSS](https://tailwindcss.com/)
-- [Next i18next](https://next.i18next.com/)
+- [Next i18next](https://github.com/isaachinman/next-i18next)
 
 ## Installation
 
