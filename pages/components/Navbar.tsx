@@ -1,5 +1,6 @@
 import { FC, useState } from 'react';
 import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
 
 import { MenuIcon } from '@heroicons/react/solid';
 
@@ -9,16 +10,17 @@ type MenuOption = {
 };
 
 const Navbar = () => {
+  const { t } = useTranslation();
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const menuOptions: MenuOption[] = [
-    { href: '/', name: 'Home' },
-    { href: '/about', name: 'About' },
-    { href: '/contact', name: 'Contact' },
+    { href: '/', name: t`home` },
+    { href: '/about', name: t`about` },
+    { href: '/contact', name: t`contact` },
   ];
 
   return (
-    <div className="flex bg-slate-800 justify-between items-center px-2 py-6">
-      <div className="flex items-center justify-evenly px-10">
+    <div className="flex bg-slate-800 justify-between items-center px-10 py-5">
+      <div className="flex items-center justify-evenly">
         <a href="#">
           <div
             className="rounded-full h-5 w-5 inline-block mr-3"
@@ -34,7 +36,7 @@ const Navbar = () => {
       <ul className="flex-row text-white hidden md:flex">
         {menuOptions.map((navItem) => {
           return (
-            <li className="hover:text-slate-400 px-10">
+            <li className="hover:text-slate-400 pl-4">
               <Link href={navItem.href}>
                 <a>{navItem.name}</a>
               </Link>
@@ -44,7 +46,7 @@ const Navbar = () => {
       </ul>
       <div className="flex md:hidden px-10">
         <MenuIcon
-          className="h-5 w-5 text-blue-500"
+          className="h-5 w-5 text-white"
           onClick={() => setShowMenu(!showMenu)}
         />
         {showMenu && (
