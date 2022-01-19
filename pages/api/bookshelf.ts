@@ -10,9 +10,9 @@ const cors = Cors({
 });
 
 // https://nextjs.org/docs/api-routes/api-middlewares#connectexpress-middleware-support
-const runMiddleware = (req, res, fn) => {
+const runMiddleware = (req: any, res: any, fn: any) => {
   return new Promise((resolve, reject) => {
-    fn(req, res, (result) => {
+    fn(req, res, (result: any) => {
       if (result instanceof Error) {
         return reject(result);
       }
@@ -22,6 +22,9 @@ const runMiddleware = (req, res, fn) => {
   });
 };
 
+/**
+ * Parse XML response into JSON
+ */
 const parseXMLResponse = async (data: any) => {
   try {
     const parsed: {
@@ -41,6 +44,10 @@ const parseXMLResponse = async (data: any) => {
   }
 };
 
+/**
+ * Get books from my Goodreads shelves
+ * https://www.goodreads.com/api/index#reviews.list
+ */
 const getGoodreadsData = async (additionalParams: { shelf: string }) => {
   try {
     const response = await axios.get(

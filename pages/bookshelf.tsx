@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react';
 import { NextPage } from 'next';
 import axios from 'axios';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 import PageContent from './components/PageContent';
 
 const Bookshelf: NextPage = () => {
+  const { t } = useTranslation(['common']);
   const [loading, setLoading] = useState<boolean>(true);
   const [currentBooks, setCurrentBooks] = useState<any[]>([]);
   const [recentBooks, setRecentBooks] = useState<any[]>([]);
@@ -36,6 +38,13 @@ const Bookshelf: NextPage = () => {
   return (
     <PageContent>
       <div className="w-full flex flex-col content-center items-center">
+        <h2>{t`goodreads-reviews`}</h2>
+        <h3>
+          Check out the books I'm reading on{' '}
+          <a href="https://www.goodreads.com/user/show/89704524-liz-hart">
+            Goodreads
+          </a>
+        </h3>
         {[
           { name: 'Current Reads', books: currentBooks },
           { name: 'Recent Reads', books: recentBooks },
@@ -43,7 +52,7 @@ const Bookshelf: NextPage = () => {
         ].map((shelf, index) => {
           return (
             <div className="max-h-40" key={index}>
-              <h2>{shelf.name}</h2>
+              <h3>{shelf.name}</h3>
               <div className="flex flex-row max-w-lg overflow-scroll">
                 {shelf.books.map((item: { book: any[] }) => {
                   const { title, image_url, authors } = item.book[0];
