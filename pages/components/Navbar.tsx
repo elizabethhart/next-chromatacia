@@ -13,6 +13,7 @@ const Navbar = () => {
   const { t } = useTranslation();
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const menuOptions: MenuOption[] = [
+    { href: '/bookshelf', name: t`bookshelf` },
     { href: '/', name: t`home` },
     { href: '/about', name: t`about` },
     { href: '/contact', name: t`contact` },
@@ -34,9 +35,9 @@ const Navbar = () => {
         </a>
       </div>
       <ul className="flex-row text-white hidden md:flex">
-        {menuOptions.map((navItem) => {
+        {menuOptions.map((navItem, idx) => {
           return (
-            <li className="hover:text-slate-400 pl-4">
+            <li className="hover:text-slate-400 pl-4" key={idx}>
               <Link href={navItem.href}>
                 <a>{navItem.name}</a>
               </Link>
@@ -52,9 +53,9 @@ const Navbar = () => {
         {showMenu && (
           <div className="absolute top-20 right-2">
             <ul className="flex-col text-white bg-slate-500 px-3">
-              {menuOptions.map((navItem) => {
+              {menuOptions.map((navItem, idx) => {
                 return (
-                  <li className="hover:text-slate-400 py-4">
+                  <li className="hover:text-slate-400 py-4" key={idx}>
                     <Link href={navItem.href}>
                       <a onClick={() => setShowMenu(false)}>{navItem.name}</a>
                     </Link>
