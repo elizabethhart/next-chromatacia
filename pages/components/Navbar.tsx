@@ -14,15 +14,13 @@ const Navbar = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const menuOptions: MenuOption[] = [
     { href: '/bookshelf', name: t`bookshelf` },
-    { href: '/', name: t`home` },
     { href: '/about', name: t`about` },
-    { href: '/contact', name: t`contact` },
   ];
 
   return (
     <div className="flex bg-slate-800 justify-between items-center px-10 py-5">
       <div className="flex items-center justify-evenly">
-        <a href="#">
+        <a href="/">
           <div
             className="rounded-full h-5 w-5 inline-block mr-3"
             id="colorWheel"
