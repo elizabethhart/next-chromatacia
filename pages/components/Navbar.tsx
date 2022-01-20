@@ -13,6 +13,7 @@ const Navbar = () => {
   const { t } = useTranslation();
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const menuOptions: MenuOption[] = [
+    { href: '/gallery', name: t`gallery` },
     { href: '/bookshelf', name: t`bookshelf` },
     { href: '/about', name: t`about` },
   ];
