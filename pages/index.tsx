@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
-import { MdConstruction } from 'react-icons/md'
+import { MdConstruction } from 'react-icons/md';
 
 import PageContent from './components/PageContent';
 
