@@ -44,17 +44,25 @@ const Gallery: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PageContent>
-        <div className="w-full text-center mb-6">
-          <h1>{t`flickr-images`}</h1>
-        </div>
-        <div className="w-full flex flex-row justify-center">
-          <Carousel
-            slides={photoset.map((photo) => ({
-              image: photo.url_o,
-              title: 'test',
-              altText: 'test',
-            }))}
-          />
+        <div className="w-full flex flex-col content-center items-center">
+          {loading ? (
+            <Spinner />
+          ) : (
+            <>
+              <div className="w-full text-center mb-6">
+                <h1>{t`flickr-images`}</h1>
+              </div>
+              <div className="w-full flex flex-row justify-center">
+                <Carousel
+                  slides={photoset.map((photo) => ({
+                    image: photo.url_o,
+                    title: 'test',
+                    altText: 'test',
+                  }))}
+                />
+              </div>
+            </>
+          )}
         </div>
       </PageContent>
     </>

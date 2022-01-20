@@ -7,6 +7,7 @@ import { useTranslation } from 'next-i18next';
 
 import PageContent from './components/PageContent';
 import Carousel from './components/Carousel';
+import Spinner from './components/Spinner';
 
 const Bookshelf: NextPage = () => {
   const { t } = useTranslation(['common']);
@@ -46,43 +47,49 @@ const Bookshelf: NextPage = () => {
       </Head>
       <PageContent>
         <div className="w-full flex flex-col content-center items-center">
-          <div className="w-full text-center mb-6">
-            <h1>{t`goodreads-reviews`}</h1>
-          </div>
-          <h3>
-            Check out the books I'm reading on{' '}
-            <a href="https://www.goodreads.com/user/show/89704524-liz-hart">
-              Goodreads
-            </a>
-          </h3>
-          <div className="w-full flex flex-row justify-between">
-            {[
-              { name: 'Current Reads', books: currentBooks },
-              { name: 'Recent Reads', books: recentBooks },
-              { name: 'Favorite Reads', books: favoriteBooks },
-            ].map((shelf, index) => {
-              return (
-                <div key={index}>
-                  <div className="w-full text-center mb-6">
-                    <h3>{shelf.name}</h3>
-                  </div>
-                  <div className="w-full flex flex-row justify-center">
-                    <Carousel
-                      slides={shelf.books.map((book) => {
-                        const { title, image_url, authors } = book.book[0];
-                        return {
-                          image: image_url,
-                          title: title,
-                          subTitle: authors[0].author[0].name,
-                          altText: 'test',
-                        };
-                      })}
-                    />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          {loading ? (
+            <Spinner />
+          ) : (
+            <>
+              <div className="w-full text-center mb-6">
+                <h1>{t`goodreads-reviews`}</h1>
+              </div>
+              <h3>
+                Check out the books I'm reading on{' '}
+                <a href="https://www.goodreads.com/user/show/89704524-liz-hart">
+                  Goodreads
+                </a>
+              </h3>
+              <div className="w-full flex flex-row justify-between">
+                {[
+                  { name: 'Current Reads', books: currentBooks },
+                  { name: 'Recent Reads', books: recentBooks },
+                  { name: 'Favorite Reads', books: favoriteBooks },
+                ].map((shelf, index) => {
+                  return (
+                    <div key={index}>
+                      <div className="w-full text-center mb-6">
+                        <h3>{shelf.name}</h3>
+                      </div>
+                      <div className="w-full flex flex-row justify-center">
+                        <Carousel
+                          slides={shelf.books.map((book) => {
+                            const { title, image_url, authors } = book.book[0];
+                            return {
+                              image: image_url,
+                              title: title,
+                              subTitle: authors[0].author[0].name,
+                              altText: 'test',
+                            };
+                          })}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </>
+          )}
         </div>
       </PageContent>
     </>
