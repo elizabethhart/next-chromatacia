@@ -2,16 +2,18 @@ import { useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import cx from 'classnames';
 
-type Props = {
-  slides: {
-    image: string;
-    title: string;
-    subTitle?: string;
-    altText: string;
-  }[];
+type Slide = {
+  image: string;
+  title: string;
+  subTitle?: string;
+  altText: string;
 };
 
-const Carousel: React.FC<Props> = ({ slides }) => {
+type Props = {
+  slides: Slide[];
+};
+
+const Carousel: React.FC<Props> = ({ slides = [] }) => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   return (
     <div>
