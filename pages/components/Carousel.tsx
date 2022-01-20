@@ -23,27 +23,25 @@ const Carousel: React.FC<Props> = ({ slides = [] }) => {
           className="text-black cursor-pointer text-3xl"
         />
         <div>
-          {slides.map((slide, index) => {
-            return (
-              <div
+          {slides.map((slide, index) => (
+            <div
+              className={cx(
+                'flex flex-col',
+                index === currentSlide ? 'block' : 'hidden'
+              )}
+            >
+              <img
+                src={slide.image}
+                alt={slide.altText}
+                key={index}
                 className={cx(
-                  'flex flex-col',
-                  index === currentSlide ? 'block' : 'hidden'
+                  index === currentSlide && 'w-full h-auto object-cover'
                 )}
-              >
-                <img
-                  src={slide.image}
-                  alt={slide.altText}
-                  key={index}
-                  className={cx(
-                    index === currentSlide && 'w-full h-auto object-cover'
-                  )}
-                />
-                <p>{slide.title}</p>
-                <p>{slide.subTitle}</p>
-              </div>
-            );
-          })}
+              />
+              <p>{slide.title}</p>
+              <p>{slide.subTitle}</p>
+            </div>
+          ))}
         </div>
         <FaChevronRight
           onClick={() =>
