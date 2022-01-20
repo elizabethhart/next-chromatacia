@@ -4,9 +4,15 @@ import Footer from './Footer';
 const Layout: React.FC = ({ children }) => {
   return (
     <>
-      <Navbar />
-      <main>{children}</main>
-      <Footer />
+      {process.env.NODE_ENV === 'production' ? (
+        <>{children}</>
+      ) : (
+        <>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </>
+      )}
     </>
   );
 };
