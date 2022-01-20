@@ -1,8 +1,8 @@
 import Spinner from './Spinner';
 
-type Props = {
-  loading?: boolean;
-};
+// type Props = {
+//   loading?: boolean;
+// };
 
 const PageContent: React.FC = ({ children }) => {
   return (

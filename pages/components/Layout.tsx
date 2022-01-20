@@ -1,12 +1,11 @@
 import Navbar from './Navbar';
 import Footer from './Footer';
-import Spinner from './Spinner';
 
-const Layout: React.FC<{ loading: boolean }> = ({ children, loading }) => {
+const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Navbar />
-      <main>{loading ? <Spinner /> : children}</main>
+      <main>{children}</main>
       <Footer />
     </>
   );
