@@ -35,7 +35,7 @@ const Bookshelf: NextPage = () => {
   };
 
   useEffect(() => {
-    void fetchBookshelf();
+    // void fetchBookshelf();
   });
 
   return (
@@ -52,20 +52,21 @@ const Bookshelf: NextPage = () => {
           ) : (
             <>
               <div className="w-full text-center mb-6">
-                <h1>{t`goodreads-reviews`}</h1>
+                <h1 className="text-2xl">{t`goodreads-reviews`}</h1>
+                <h2 className="text-lg">
+                  Check out the books I'm reading on{' '}
+                  <a href="https://www.goodreads.com/user/show/89704524-liz-hart">
+                    Goodreads
+                  </a>
+                </h2>
               </div>
-              <h3>
-                Check out the books I'm reading on{' '}
-                <a href="https://www.goodreads.com/user/show/89704524-liz-hart">
-                  Goodreads
-                </a>
-              </h3>
               <div className="w-full flex flex-row justify-between">
                 {[
-                  { name: 'Current Reads', books: currentBooks },
-                  { name: 'Recent Reads', books: recentBooks },
-                  { name: 'Favorite Reads', books: favoriteBooks },
+                  { name: t`reading`, books: currentBooks },
+                  { name: t`just-finished`, books: recentBooks },
+                  { name: t`favorites`, books: favoriteBooks },
                 ].map((shelf, index) => {
+                  console.log(shelf);
                   return (
                     <div key={index}>
                       <div className="w-full text-center mb-6">

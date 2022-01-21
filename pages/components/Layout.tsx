@@ -1,5 +1,4 @@
 import Navbar from './Navbar';
-import Footer from './Footer';
 
 const Layout: React.FC = ({ children }) => {
   return (
@@ -7,11 +6,10 @@ const Layout: React.FC = ({ children }) => {
       {process.env.NODE_ENV === 'production' ? (
         <>{children}</>
       ) : (
-        <>
+        <div className="">
           <Navbar />
           <main>{children}</main>
-          <Footer />
-        </>
+        </div>
       )}
     </>
   );

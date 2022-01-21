@@ -50,15 +50,19 @@ const Gallery: NextPage = () => {
           ) : (
             <>
               <div className="w-full text-center mb-6">
-                <h1>{t`flickr-images`}</h1>
+                <h1>{t`digital-art`}</h1>
               </div>
               <div className="w-full flex flex-row justify-center">
                 <Carousel
-                  slides={photoset.map((photo) => ({
-                    image: photo.url_o,
-                    title: 'test',
-                    altText: 'test',
-                  }))}
+                  slides={photoset.map((photo) => {
+                    return {
+                      image: photo.url_o,
+                      title: photo.title,
+                      altText: photo.title,
+                    };
+                  })}
+                  slideHeight="h-96"
+                  slideWidth="w-96"
                 />
               </div>
             </>

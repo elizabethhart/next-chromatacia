@@ -2,8 +2,12 @@
   "about": "About",
   "bookshelf": "Bookshelf",
   "contact": "Contact",
+  "digital-art": "Digital Art",
+  "just-finished": "Just Finished",
+  "favorits": "Favorites",
   "flickr-images": "Flickr Images",
   "gallery": "Gallery",
   "goodreads-reviews": "Goodreads Reviews",
-  "home": "Home"
+  "home": "Home",
+  "reading": "Reading"
 }

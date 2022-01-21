@@ -11,13 +11,19 @@ type Slide = {
 
 type Props = {
   slides: Slide[];
+  slideHeight?: string;
+  slideWidth?: string;
 };
 
-const Carousel: React.FC<Props> = ({ slides = [] }) => {
+const Carousel: React.FC<Props> = ({
+  slides = [],
+  slideHeight,
+  slideWidth,
+}) => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
   return (
     <div>
-      <div className="max-w-lg h-72 flex flex-row justify-between items-center overflow-hidden relative">
+      <div className="max-w-lg flex flex-row justify-between items-center overflow-hidden relative">
         <FaChevronLeft
           onClick={() => setCurrentSlide(Math.max(currentSlide - 1, 0))}
           className="text-black cursor-pointer text-3xl"
@@ -26,8 +32,10 @@ const Carousel: React.FC<Props> = ({ slides = [] }) => {
           {slides.map((slide, index) => (
             <div
               className={cx(
-                'flex flex-col',
-                index === currentSlide ? 'block' : 'hidden'
+                'flex flex-col h-',
+                index === currentSlide ? 'block' : 'hidden',
+                slideHeight || 'h-72',
+                slideWidth || 'w-72'
               )}
             >
               <img
@@ -35,11 +43,9 @@ const Carousel: React.FC<Props> = ({ slides = [] }) => {
                 alt={slide.altText}
                 key={index}
                 className={cx(
-                  index === currentSlide && 'w-full h-auto object-cover'
+                  index === currentSlide && 'w-full h-full object-contain'
                 )}
               />
-              <p>{slide.title}</p>
-              <p>{slide.subTitle}</p>
             </div>
           ))}
         </div>
@@ -49,6 +55,10 @@ const Carousel: React.FC<Props> = ({ slides = [] }) => {
           }
           className="text-black cursor-pointer text-3xl"
         />
+      </div>
+      <div className="flex flex-col justify-center items-center">
+        <h2>{slides[currentSlide].title}</h2>
+        <h3>{slides[currentSlide].subTitle}</h3>
       </div>
     </div>
   );

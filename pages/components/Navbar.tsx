@@ -19,21 +19,11 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="flex bg-slate-800 justify-between items-center px-10 py-5">
-      <div className="flex items-center justify-evenly">
-        <a href="/">
-          <div
-            className="rounded-full h-5 w-5 inline-block mr-3"
-            id="colorWheel"
-          >
-            {Array.from(Array(10).keys()).map((_item, idx) => {
-              const className = `color0${idx + 1}`;
-              return <span key={idx} className={className}></span>;
-            })}
-          </div>
-        </a>
+    <div className="flex justify-between items-center px-10 py-4 border-b-2 border-slate-200 bg-slate-100">
+      <div className="flex items-center text-slate-900 justify-evenly">
+        <a href="/">+</a>
       </div>
-      <ul className="flex-row text-white hidden md:flex">
+      <ul className="flex-row text-slate-900 hidden md:flex">
         {menuOptions.map((navItem, idx) => {
           return (
             <li className="hover:text-slate-400 pl-4" key={idx}>
@@ -44,14 +34,14 @@ const Navbar = () => {
           );
         })}
       </ul>
-      <div className="flex md:hidden px-10">
+      <div className="flex md:hidden">
         <MenuIcon
-          className="h-5 w-5 text-white"
+          className="h-5 w-5 text-slate-900"
           onClick={() => setShowMenu(!showMenu)}
         />
         {showMenu && (
-          <div className="absolute top-20 right-2">
-            <ul className="flex-col text-white bg-slate-500 px-3">
+          <div className="absolute top-16 right-10 z-10 rounded bg-slate-500">
+            <ul className="flex-col text-slate-900  px-3">
               {menuOptions.map((navItem, idx) => {
                 return (
                   <li className="hover:text-slate-400 py-4" key={idx}>
