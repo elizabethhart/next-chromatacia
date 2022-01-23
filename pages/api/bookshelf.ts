@@ -65,7 +65,14 @@ const getGoodreadsData = async (additionalParams: { shelf: string }) => {
 
     const parsedResponse = await parseXMLResponse(response.data);
 
-    return parsedResponse?.GoodreadsResponse.reviews[0].review;
+    return parsedResponse?.GoodreadsResponse.reviews[0].review.map((item) => {
+      const book = item.book[0];
+      return {
+        title: book.title,
+        imageUrl: book.image_url,
+        authors: book.authors[0].author,
+      };
+    });
   } catch (error) {
     console.log(error);
   }

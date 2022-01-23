@@ -26,9 +26,12 @@ export default async function handler(
       },
     });
 
-    console.log(response);
-
-    res.status(200).json({ photoset: response.data.photoset });
+    res.status(200).json({
+      photoset: response.data.photoset.photo.map((photo: any) => ({
+        url: photo.url_o,
+        title: photo.title,
+      })),
+    });
   } catch (error) {
     return res.status(500).json({ message: 'Something went wrong' });
   }

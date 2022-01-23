@@ -4,7 +4,7 @@ import { appWithTranslation } from 'next-i18next';
 
 // UI
 import '../styles/globals.css';
-import Layout from './components/Layout';
+import Layout from '../components/Layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
