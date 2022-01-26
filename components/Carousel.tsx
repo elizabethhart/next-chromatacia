@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Image from 'next/image';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import cx from 'classnames';
 
@@ -46,7 +47,8 @@ const Carousel: React.FC<Props> = ({ slides = [] }) => {
             )}
             key={index}
           >
-            <img
+            <Image
+              priority={true}
               src={slide.image}
               alt={slide.altText}
               key={index}
