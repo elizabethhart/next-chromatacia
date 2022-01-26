@@ -15,23 +15,30 @@ export default async function handler(
   res: NextApiResponse<SuccessResponse | FailureResponse>
 ) {
   try {
-    const response = await axios.get('https://www.flickr.com/services/rest/', {
-      params: {
-        method: 'flickr.photosets.getPhotos',
-        photoset_id: '72157715844102541',
-        extras: 'url_o',
-        format: 'json',
-        nojsoncallback: 1,
-        api_key: process.env.REACT_APP_FLICKR_API_KEY,
-      },
-    });
+    if (req.method === 'GET') {
+      const response = await axios.get(
+        'https://www.flickr.com/services/rest/',
+        {
+          params: {
+            method: 'flickr.photosets.getPhotos',
+            photoset_id: '72157715844102541',
+            extras: 'url_o',
+            format: 'json',
+            nojsoncallback: 1,
+            api_key: process.env.REACT_APP_FLICKR_API_KEY,
+          },
+        }
+      );
 
-    res.status(200).json({
-      photoset: response.data.photoset.photo.map((photo: any) => ({
-        url: photo.url_o,
-        title: photo.title,
-      })),
-    });
+      res.status(200).json({
+        photoset: response.data.photoset.photo.map((photo: any) => ({
+          url: photo.url_o,
+          title: photo.title,
+        })),
+      });
+    } else {
+      return res.status(404).json({ message: 'Looking for something?' });
+    }
   } catch (error) {
     return res.status(500).json({ message: 'Something went wrong' });
   }

@@ -45,7 +45,7 @@ export const Bookshelf: FC = () => {
           <div className="w-full text-center mb-6">
             <h1 className="text-2xl">{t`goodreads-reviews`}</h1>
             <h2 className="text-lg">
-              Check out the books I'm reading on{' '}
+              {t`bookshelf-header`}&nbsp;
               <a href="https://www.goodreads.com/user/show/89704524-liz-hart">
                 Goodreads
               </a>

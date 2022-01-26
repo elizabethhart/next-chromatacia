@@ -15,12 +15,28 @@ type Props = {
 
 const Carousel: React.FC<Props> = ({ slides = [] }) => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
+
+  const slideLeft = () => {
+    const beginningOfDeck = currentSlide === 0;
+    setCurrentSlide(
+      beginningOfDeck ? slides.length - 1 : Math.max(currentSlide - 1, 0)
+    );
+  };
+
+  const slideRight = () => {
+    const endOfDeck = currentSlide + 1 === slides.length;
+    setCurrentSlide(
+      endOfDeck ? 0 : Math.min(currentSlide + 1, slides.length - 1)
+    );
+  };
+
   return (
     <div>
       <div className="max-w-lg flex flex-row justify-between items-center overflow-hidden relative">
         <FaChevronLeft
-          onClick={() => setCurrentSlide(Math.max(currentSlide - 1, 0))}
-          className="text-black cursor-pointer text-3xl"
+          aria-label="Left"
+          onClick={slideLeft}
+          className="text-slate-400 cursor-pointer text-3xl"
         />
         {slides.map((slide, index) => (
           <div
@@ -41,10 +57,9 @@ const Carousel: React.FC<Props> = ({ slides = [] }) => {
           </div>
         ))}
         <FaChevronRight
-          onClick={() =>
-            setCurrentSlide(Math.min(currentSlide + 1, slides.length - 1))
-          }
-          className="text-black cursor-pointer text-3xl"
+          aria-label="Right"
+          onClick={slideRight}
+          className="text-slate-400 cursor-pointer text-3xl"
         />
       </div>
       <div className="flex flex-col justify-center items-center">

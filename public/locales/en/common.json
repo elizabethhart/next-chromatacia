@@ -1,7 +1,10 @@
 {
   "about": "About",
+  "about-intro": "I'm {{name}} (she/her). I write software and sometimes draw things.",
   "bookshelf": "Bookshelf",
+  "bookshelf-header": "Check out the books I'm reading on",
   "contact": "Contact",
+  "contact-header": "If you'd like to get in touch:",
   "digital-art": "Digital Art",
   "favorits": "Favorites",
   "flickr-images": "Flickr Images",
@@ -9,5 +12,6 @@
   "goodreads-reviews": "Goodreads Reviews",
   "home": "Home",
   "just-finished": "Just Finished",
-  "reading": "Reading"
+  "reading": "Reading",
+  "technologies-header": "Technologies I'm into right now:"
 }
