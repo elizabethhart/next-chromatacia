@@ -11,6 +11,11 @@ Gut rebuild of [chromatacia](https://github.com/elizabethhart/chromatacia) using
 - [TailwindCSS](https://tailwindcss.com/)
 - [Next i18next](https://github.com/isaachinman/next-i18next)
 
+## APIs
+
+- [Flickr](https://www.flickr.com/services/api/)
+- [Goodreads](https://www.goodreads.com/api)
+
 ## Installation
 
 In the project directory, you can run:
