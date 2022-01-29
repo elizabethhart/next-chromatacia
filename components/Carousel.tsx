@@ -39,25 +39,29 @@ const Carousel: React.FC<Props> = ({ slides = [] }) => {
           onClick={slideLeft}
           className="text-slate-400 cursor-pointer text-3xl"
         />
-        {slides.map((slide, index) => (
-          <div
-            className={cx(
-              'h-72 w-72',
-              index === currentSlide ? 'block' : 'hidden'
-            )}
-            key={index}
-          >
-            <Image
-              priority={true}
-              src={slide.image}
-              alt={slide.altText}
-              key={index}
+        {slides.map((slide, index) => {
+          return (
+            <div
               className={cx(
-                index === currentSlide && 'w-full h-full object-contain'
+                'h-72 w-72',
+                index === currentSlide ? 'block' : 'hidden'
               )}
-            />
-          </div>
-        ))}
+              key={index}
+            >
+              <Image
+                height="288"
+                width="288"
+                priority={true}
+                src={slide.image}
+                alt={slide.altText}
+                key={index}
+                className={cx(
+                  index === currentSlide && 'w-full h-full object-contain'
+                )}
+              />
+            </div>
+          );
+        })}
         <FaChevronRight
           aria-label="Right"
           onClick={slideRight}

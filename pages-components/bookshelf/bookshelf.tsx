@@ -62,12 +62,9 @@ export const Bookshelf: FC = () => {
                     <Carousel
                       slides={shelf.books.map((book) => {
                         return {
-                          image: book.imageUrl,
-                          title: book.title,
-                          subTitle: book.authors
-                            .map((author) => author.name)
-                            .join(', '),
-                          altText: book.title,
+                          image: book.imageUrl[0],
+                          title: book.title[0],
+                          altText: book.title[0],
                         };
                       })}
                     />
