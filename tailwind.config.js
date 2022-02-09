@@ -5,7 +5,11 @@ module.exports = {
     './pages-components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        nunito: ['"Nunito"', 'Helvetica', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 };
