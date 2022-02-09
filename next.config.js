@@ -5,7 +5,7 @@ const nextConfig = {
   i18n,
   reactStrictMode: true,
   images: {
-    domains: ['live.staticflickr.com', 'i.gr-assets.com'],
+    domains: ['live.staticflickr.com', 'i.gr-assets.com', 's.gr-assets.com'],
   },
 };
 
