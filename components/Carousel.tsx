@@ -48,10 +48,9 @@ const Carousel: React.FC<Props> = ({ slides = [] }) => {
               )}
               key={index}
             >
-              <Image
+              <img
                 height="288"
                 width="288"
-                priority={true}
                 src={slide.image}
                 alt={slide.altText}
                 key={index}
