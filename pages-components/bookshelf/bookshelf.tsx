@@ -37,11 +37,11 @@ export const Bookshelf: FC = () => {
   }, []);
 
   return (
-    <div className="w-full flex flex-col content-center items-center">
+    <div className="w-full flex flex-col content-center items-center md:max-w-xl relative mx-auto">
       {loading ? (
         <Spinner />
       ) : (
-        <>
+        <div className="">
           <div className="w-full text-center mb-6">
             <h1 className="text-2xl">{t`goodreads-reviews`}</h1>
             <h2 className="text-lg">
@@ -73,7 +73,7 @@ export const Bookshelf: FC = () => {
               );
             })}
           </div>
-        </>
+        </div>
       )}
     </div>
   );
