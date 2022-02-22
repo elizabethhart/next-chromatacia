@@ -18,7 +18,6 @@ const Home: NextPage = () => {
       <PageContent>
         <div className="w-full h-full flex flex-col justify-center items-center">
           <h1 className="text-4xl mb-2 font-nunito">Welcome!</h1>
-          <p>This site is currently under construction.</p>
         </div>
       </PageContent>
     </>

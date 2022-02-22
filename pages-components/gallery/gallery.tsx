@@ -35,7 +35,7 @@ export const Gallery: FC = () => {
       ) : (
         <>
           <div className="w-full text-center mb-6">
-            <h1>{t`digital-art`}</h1>
+            <h1 className="text-2xl">{t`digital-art`}</h1>
           </div>
           <div className="w-full flex flex-row justify-center">
             <Carousel

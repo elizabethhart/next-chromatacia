@@ -6,37 +6,42 @@ import { FiMail } from 'react-icons/fi';
 
 export const About: FC = () => {
   const { t } = useTranslation('common');
+
   return (
-    <div className="w-full font-sans">
-      <div className="flex flex-col text-center justify-between border-slate-500 border-2 rounded-md p-10">
-        <section className="mb-10 pb-5 border-b-2 border-slate-200">
-          <h1 className="text-2xl text-slate-800 font-bold">{'About'}</h1>
-          <p className="text-md">{t('about-intro', { name: 'Elizabeth' })}</p>
+    <div className="font-sans md:max-w-xl relative mx-auto">
+      <div className="flex flex-col text-center justify-between border-slate-500 border-2 rounded-md">
+        <section className="py-5 border-b-2 border-slate-200 flex flex-col justify-center items-center">
+          <div
+            className="h-48 w-48 rounded-full bg-contain"
+            style={{
+              backgroundImage: `url("https://avatars.githubusercontent.com/u/22899417?v=4")`,
+            }}
+          ></div>
+          <h1 className="text-2xl text-slate-800 font-bold">Elizabeth Hart</h1>
+          <p className="text-md">Software Engineer | Artist</p>
         </section>
-        <section className="flex flex-row justify-between">
-          <div className="mx-10">
-            <h2 className="text-lg font-medium">{t`technologies-header`}</h2>
-            <ul>
-              <li>React</li>
-              <li>Next</li>
-              <li>Node</li>
-              <li>All things TypeScript</li>
-            </ul>
-          </div>
-          <div className="mx-10">
-            <h2 className="text-lg font-medium">{t`contact-header`}</h2>
-            <ul className="decoration-transparent">
-              <li>
-                <a href="https://github.com/elizabethhart">
-                  <FaGithub className="inline-block" /> GitHub
-                </a>
-              </li>
-              <li>
-                <a href="mailto:elizabethwhart@gmail.com">
-                  <FiMail className="inline-block" /> Email
-                </a>
-              </li>
-            </ul>
+        <section>
+          <div className="flex flex-row w-full justify-between space-x-4 p-10">
+            <button
+              className="h-24 w-48 border-2 rounded flex flex-col justify-center items-center"
+              onClick={() =>
+                window.open('https://github.com/elizabethhart', '_blank')
+              }
+              aria-label="github link"
+            >
+              <FaGithub size="50px" />
+              <p>GitHub</p>
+            </button>
+            <button
+              className="h-24 w-48 border-2 rounded flex flex-col justify-center items-center"
+              onClick={() =>
+                window.open('mailto:elizabethwhart@gmail.com', '_blank')
+              }
+              aria-label="email link"
+            >
+              <FiMail size="50px" />
+              <p>Email</p>
+            </button>
           </div>
         </section>
       </div>

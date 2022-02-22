@@ -54,9 +54,9 @@ export const Bookshelf: FC = () => {
           <div className="w-full flex md:flex-row flex-col justify-between">
             {shelves.map((shelf, index) => {
               return (
-                <div key={index}>
-                  <div className="w-full text-center mb-6">
-                    <h3>{shelf.name}</h3>
+                <div key={index} className="mb-8">
+                  <div className="w-full text-center mb-4">
+                    <h3 className="text-xl font-semibold">{shelf.name}</h3>
                   </div>
                   <div className="w-full flex flex-row justify-center">
                     <Carousel

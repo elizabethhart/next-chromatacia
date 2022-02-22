@@ -37,41 +37,35 @@ const Carousel: React.FC<Props> = ({ slides = [] }) => {
         <FaChevronLeft
           aria-label="Left"
           onClick={slideLeft}
-          className="text-slate-400 cursor-pointer text-3xl"
+          className="text-slate-400 cursor-pointer text-3xl relative left-10 z-10"
         />
         {slides.map((slide, index) => {
           return (
             <div
               className={cx(
-                'h-72 w-72',
+                'relative w-72 h-72 flex flex-col justify-end bg-contain bg-no-repeat bg-center rounded-lg bg-slate-100',
                 index === currentSlide ? 'block' : 'hidden'
               )}
+              style={{ backgroundImage: `url("${slide.image}")` }}
               key={index}
             >
-              <img
-                height="288"
-                width="288"
-                src={slide.image}
-                alt={slide.altText}
-                key={index}
+              <div
                 className={cx(
-                  index === currentSlide && 'w-full h-full object-contain'
+                  'flex-col justify-center items-center text-center bg-black opacity-75 text-white rounded-b-lg h-12',
+                  slide.title ? 'flex' : 'hidden'
                 )}
-              />
+              >
+                {slide.title && <h2>{slide.title}</h2>}
+                {slide.subTitle && <h3>{slide.subTitle}</h3>}
+              </div>
             </div>
           );
         })}
         <FaChevronRight
           aria-label="Right"
           onClick={slideRight}
-          className="text-slate-400 cursor-pointer text-3xl"
+          className="text-slate-400 cursor-pointer text-3xl relative right-10 z-10"
         />
-      </div>
-      <div className="flex flex-col justify-center items-center">
-        {slides[currentSlide].title && <h2>{slides[currentSlide].title}</h2>}
-        {slides[currentSlide].subTitle && (
-          <h3>{slides[currentSlide].subTitle}</h3>
-        )}
       </div>
     </div>
   );
