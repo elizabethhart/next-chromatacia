@@ -1,8 +1,9 @@
 // 3rd Party
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { useTranslation } from 'next-i18next';
 import { FaGithub } from 'react-icons/fa';
 import { FiMail } from 'react-icons/fi';
+import axios from 'axios';
 
 export const About: FC = () => {
   const { t } = useTranslation('common');
