@@ -19,16 +19,16 @@ const Navbar = () => {
   const { t } = useTranslation();
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const menuOptions: MenuOption[] = [
-    {
-      href: '/gallery',
-      name: t`gallery`,
-      icon: <PhotographIcon className="h-5 w-5 text-slate-500" />,
-    },
-    {
-      href: '/bookshelf',
-      name: t`bookshelf`,
-      icon: <BookOpenIcon className="h-5 w-5 text-slate-500" />,
-    },
+    // {
+    //   href: '/gallery',
+    //   name: t`gallery`,
+    //   icon: <PhotographIcon className="h-5 w-5 text-slate-500" />,
+    // },
+    // {
+    //   href: '/bookshelf',
+    //   name: t`bookshelf`,
+    //   icon: <BookOpenIcon className="h-5 w-5 text-slate-500" />,
+    // },
     {
       href: '/about',
       name: t`about`,
