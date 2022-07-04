@@ -6,6 +6,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 // UI
 import Header from '../components/Header';
 import PageContent from '../components/PageContent';
+import { MdConstruction } from 'react-icons/md';
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
@@ -18,6 +19,19 @@ const Home: NextPage = () => {
       <PageContent>
         <div className="w-full h-full flex flex-col justify-center items-center">
           <h1 className="text-4xl mb-2 font-nunito">Welcome!</h1>
+          <section>
+            <div className="flex flex-col w-full p-10 justify-center text-center">
+              <button
+                className="h-24 w-48 border-2 rounded flex flex-col justify-center items-center"
+                onClick={() =>
+                  window.open('https://github.com/elizabethhart', '_blank')
+                }
+                aria-label="under construction"
+              >
+                <MdConstruction size="50px" />
+              </button>
+            </div>
+          </section>
         </div>
       </PageContent>
     </>

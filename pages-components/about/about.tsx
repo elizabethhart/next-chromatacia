@@ -1,9 +1,7 @@
 // 3rd Party
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import { useTranslation } from 'next-i18next';
 import { FaGithub } from 'react-icons/fa';
-import { FiMail } from 'react-icons/fi';
-import axios from 'axios';
 
 export const About: FC = () => {
   const { t } = useTranslation('common');
@@ -22,7 +20,7 @@ export const About: FC = () => {
           <p className="text-md">Software Engineer | Artist</p>
         </section>
         <section>
-          <div className="flex flex-row w-full justify-between space-x-4 p-10">
+          <div className="flex flex-row w-full p-10 justify-center">
             <button
               className="h-24 w-48 border-2 rounded flex flex-col justify-center items-center"
               onClick={() =>
@@ -32,16 +30,6 @@ export const About: FC = () => {
             >
               <FaGithub size="50px" />
               <p>GitHub</p>
-            </button>
-            <button
-              className="h-24 w-48 border-2 rounded flex flex-col justify-center items-center"
-              onClick={() =>
-                window.open('mailto:elizabethwhart@gmail.com', '_blank')
-              }
-              aria-label="email link"
-            >
-              <FiMail size="50px" />
-              <p>Email</p>
             </button>
           </div>
         </section>
