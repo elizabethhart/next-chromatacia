@@ -21,7 +21,6 @@ export const Gallery: FC = () => {
       } = await axios.get('/api/gallery');
 
       setPhotoset(photoset.reverse());
-      console.log(photoset);
       setLoading(false);
     } catch (error) {
       console.log(error);
@@ -41,25 +40,8 @@ export const Gallery: FC = () => {
       arrays.push(photoset.splice(0, size));
     }
 
-    console.log(arrays);
     setPhotochunks(arrays);
   }, [photoset]);
-
-  const style = {
-    content: {
-      border: '0',
-      borderRadius: '4px',
-      bottom: 'auto',
-      left: '50%',
-      padding: '2rem',
-      position: 'fixed',
-      right: 'auto',
-      top: '50%',
-      transform: 'translate(-50%,-50%)',
-      width: '40%',
-      maxWidth: '40rem',
-    },
-  };
 
   return (
     <div className="w-full flex flex-col content-center items-center">
@@ -69,7 +51,34 @@ export const Gallery: FC = () => {
         <div>
           {photo && (
             <Modal
-              style={style}
+              style={{
+                overlay: {
+                  position: 'fixed',
+                  zIndex: 1020,
+                  top: 0,
+                  left: 0,
+                  width: '100vw',
+                  height: '100vh',
+                  background: 'rgba(255, 255, 255, 0.75)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                },
+                content: {
+                  border: '0',
+                  borderRadius: '4px',
+                  bottom: 'auto',
+                  left: '50%',
+                  padding: '2rem',
+                  position: 'fixed',
+                  background: 'transparent',
+                  right: 'auto',
+                  top: '50%',
+                  transform: 'translate(-50%,-50%)',
+                  width: '40%',
+                  maxWidth: '40rem',
+                },
+              }}
               isOpen={photo}
               onRequestClose={() => {
                 setPhoto(undefined);
