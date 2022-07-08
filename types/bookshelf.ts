@@ -6,6 +6,7 @@ export type Book = {
   title: string;
   imageUrl: string;
   authors: Author[];
+  link: string;
 };
 
 export type Shelf = {

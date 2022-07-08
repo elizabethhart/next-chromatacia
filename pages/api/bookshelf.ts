@@ -71,6 +71,7 @@ const getGoodreadsData = async (additionalParams: { shelf: string }) => {
         title: book.title,
         imageUrl: book.image_url,
         authors: book.authors[0].author,
+        link: book.link,
       };
     });
   } catch (error) {
