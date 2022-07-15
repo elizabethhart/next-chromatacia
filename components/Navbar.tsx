@@ -22,29 +22,29 @@ const Navbar = () => {
     {
       href: '/gallery',
       name: t`gallery`,
-      icon: <PhotographIcon className="h-5 w-5 text-slate-500" />,
+      icon: <PhotographIcon className="h-5 w-5 text-white" />,
     },
     // {
     //   href: '/bookshelf',
     //   name: t`bookshelf`,
-    //   icon: <BookOpenIcon className="h-5 w-5 text-slate-500" />,
+    //   icon: <BookOpenIcon className="h-5 w-5 text-white" />,
     // },
     {
       href: '/about',
       name: t`about`,
-      icon: <InformationCircleIcon className="h-5 w-5 text-slate-500" />,
+      icon: <InformationCircleIcon className="h-5 w-5 text-white" />,
     },
   ];
 
   return (
-    <div className="flex py-4 border-b-2 border-slate-200 bg-slate-100">
+    <div className="flex py-4 bg-slate-900">
       <div className="px-4 flex justify-between w-full">
         <div className="flex">
           <a href="/" aria-label="Link to Home">
-            <CubeIcon className="h-5 w-5 text-slate-900" />
+            <CubeIcon className="h-5 w-5 text-white" />
           </a>
         </div>
-        <ul className="flex-row text-slate-900 hidden md:flex">
+        <ul className="flex-row text-white hidden md:flex">
           {menuOptions.map((navItem, idx) => {
             return (
               <li className="hover:text-slate-400 pl-4" key={idx}>
@@ -57,11 +57,11 @@ const Navbar = () => {
         </ul>
         <div className="flex md:hidden px-4">
           <MenuIcon
-            className="h-5 w-5 text-slate-900 fixed md:relative"
+            className="h-5 w-5 text-white fixed md:relative"
             onClick={() => setShowMenu(!showMenu)}
           />
           {showMenu && (
-            <div className="absolute top-14 right-4 z-10 rounded bg-slate-100 w-36">
+            <div className="fixed top-0 bottom-0 right-0 left-1/3 bg-white bg-opacity-40">
               <ul className="flex-col text-slate-900 px-3">
                 {menuOptions.map((navItem, idx) => {
                   return (

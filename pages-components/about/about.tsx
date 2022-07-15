@@ -7,7 +7,7 @@ export const About: FC = () => {
   const { t } = useTranslation('common');
 
   return (
-    <div className="font-sans md:max-w-xl relative mx-auto">
+    <div className="font-sans md:max-w-xl relative mx-auto text-white">
       <div className="flex flex-col text-center justify-between border-slate-500 border-2 rounded-md">
         <section className="py-5 border-b-2 border-slate-200 flex flex-col justify-center items-center">
           <div
@@ -16,7 +16,7 @@ export const About: FC = () => {
               backgroundImage: `url("https://avatars.githubusercontent.com/u/22899417?v=4")`,
             }}
           ></div>
-          <h1 className="text-2xl text-slate-800 font-bold">Elizabeth Hart</h1>
+          <h1 className="text-2xl font-bold">Elizabeth Hart</h1>
           <p className="text-md">Software Engineer | Artist</p>
         </section>
         <section>
