@@ -1,8 +1,5 @@
 // 3rd Party
-import { useEffect, useState } from 'react';
 import { NextPage } from 'next';
-import Head from 'next/head';
-import axios from 'axios';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 

@@ -111,7 +111,8 @@ export const Gallery: FC = () => {
                               'w-full': index % 2 !== 0,
                             })}
                           >
-                            <img
+                            <Image
+                              placeholder="blur"
                               alt={chunk[0].title}
                               className="block object-cover object-center w-full h-full rounded-lg border-2 border-slate-100 cursor-pointer"
                               src={chunk[0].url}

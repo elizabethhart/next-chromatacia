@@ -7,6 +7,7 @@ import {
   CubeIcon,
   MenuIcon,
   PhotographIcon,
+  GlobeIcon,
 } from '@heroicons/react/solid';
 
 type MenuOption = {
@@ -41,7 +42,7 @@ const Navbar = () => {
       <div className="px-4 flex justify-between w-full">
         <div className="flex">
           <a href="/" aria-label="Link to Home">
-            <CubeIcon className="h-5 w-5 text-white" />
+            <GlobeIcon className="h-5 w-5 text-white hover:text-slate-400" />
           </a>
         </div>
         <ul className="flex-row text-white hidden md:flex">
@@ -49,7 +50,10 @@ const Navbar = () => {
             return (
               <li className="hover:text-slate-400 pl-4" key={idx}>
                 <Link href={navItem.href}>
-                  <a aria-label={`Link to ${navItem.name}`}>{navItem.name}</a>
+                  <a aria-label={`Link to ${navItem.name}`}>
+                    <span aria-hidden className="mr-2">{`0${idx}`}</span>
+                    {navItem.name}
+                  </a>
                 </Link>
               </li>
             );

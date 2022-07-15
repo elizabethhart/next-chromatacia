@@ -7,7 +7,7 @@ export const About: FC = () => {
   const { t } = useTranslation('common');
 
   return (
-    <div className="font-sans md:max-w-xl relative mx-auto text-white">
+    <div className="font-sans relative mx-auto text-white flex items-center justify-end">
       <div className="flex flex-col text-center justify-between border-slate-500 border-2 rounded-md">
         <section className="py-5 border-b-2 border-slate-200 flex flex-col justify-center items-center">
           <div

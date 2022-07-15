@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         nunito: ['"Nunito"', 'Helvetica', 'sans-serif'],
+        sans: ['"Orbitron"', 'Helvetica', 'sans-serif'],
       },
     },
   },

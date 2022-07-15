@@ -2,7 +2,7 @@ import Navbar from './Navbar';
 
 const Layout: React.FC = ({ children }) => {
   return (
-    <div className="">
+    <div className="font-sans">
       <Navbar />
       <main>{children}</main>
     </div>
