@@ -8,17 +8,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background-image: url('https://www.nasa.gov/sites/default/files/thumbnails/image/iss064e037872.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-@media only screen and (max-width: 600px) {
-  body {
-    height: 100vh;
-    background-size: auto 100%;
-    background-repeat: repeat;
-  }
+  background-color: black;
 }
 
 a {
@@ -28,20 +18,6 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-#colorWheel {
-  background: conic-gradient(
-    from 90deg,
-    violet,
-    indigo,
-    blue,
-    green,
-    yellow,
-    orange,
-    red,
-    violet
-  );
 }
 
 .border-top-transparent {
